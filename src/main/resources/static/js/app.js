@@ -1,2 +1,2 @@
-console.log("Hello, world");
-vegaEmbed('#view', 'https://vega.github.io/vega/examples/bar-chart.vg.json');
+console.log("Hello world");
+vegaEmbed('#view', 'json/bar.json');
