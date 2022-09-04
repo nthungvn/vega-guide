@@ -6,8 +6,32 @@
     "autosize": "pad",
     "data": [
         {
-            "name": "source",
+            "name": "my-data",
             "url": "json/data.json"
+        }
+    ],
+    "scales": [
+        {
+            "name": "xscale",
+            "type": "band",
+            "paddingInner": 0.3,
+            "paddingOuter": 0.2,
+            "range": "width",
+            "domain": {
+                "data": "my-data",
+                "field": "category"
+            },
+            "round": true
+        },
+        {
+            "name": "yscale",
+            "type": "linear",
+            "domain": {
+                "data": "my-data",
+                "field": "amount"
+            },
+            "range": "height",
+            "nice": true
         }
     ]
 }
