@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "height": 500,
+    "width": 400,
+    "padding": 5,
+    "autosize": "pad",
+    "data": [
+        {
+            "name": "source",
+            "url": "json/data.json"
+        }
+    ]
+}
