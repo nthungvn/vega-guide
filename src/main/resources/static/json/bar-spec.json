@@ -33,5 +33,19 @@
             "range": "height",
             "nice": true
         }
+    ],
+    "axes": [
+        {
+            "scale": "xscale",
+            "orient": "bottom",
+            "title": "Category"
+        },
+        {
+            "scale": "yscale",
+            "orient": "left",
+            "tickCount": 15,
+            "offset": 10,
+            "title": "Amount"
+        }
     ]
 }
