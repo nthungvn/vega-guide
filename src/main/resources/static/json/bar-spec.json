@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "height": 500,
     "width": 400,
-    "padding": 5,
+    "padding": 10,
     "autosize": "pad",
     "data": [
         {
@@ -46,6 +46,44 @@
             "tickCount": 15,
             "offset": 10,
             "title": "Amount"
+        }
+    ],
+    "marks": [
+        {
+            "type": "rect",
+            "from": {
+                "data": "my-data"
+            },
+            "encode": {
+                "enter": {
+                    "x": {
+                        "scale": "xscale",
+                        "field": "category"
+                    },
+                    "width": {
+                        "scale": "xscale",
+                        "band": 1
+                    },
+                    "y": {
+                        "scale": "yscale",
+                        "field": "amount"
+                    },
+                    "y2": {
+                        "scale": "yscale",
+                        "value": 0
+                    }
+                },
+                "update": {
+                    "fill": {
+                        "value": "green"
+                    }
+                },
+                "hover": {
+                    "fill": {
+                        "value": "steelblue"
+                    }
+                }
+            }
         }
     ]
 }
