@@ -7,7 +7,7 @@
     "data": [
         {
             "name": "my-data",
-            "url": "json/data.json"
+            "url": "/json/data.json"
         }
     ],
     "scales": [

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/bar-chart")
 public class BarChartController {
-    @GetMapping
+    @GetMapping({"/", "", "/horizontal"})
     public String index() {
         return "bar-chart";
     }
