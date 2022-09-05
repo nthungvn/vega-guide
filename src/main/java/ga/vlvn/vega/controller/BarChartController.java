@@ -11,4 +11,9 @@ public class BarChartController {
     public String index() {
         return "bar-chart";
     }
+
+    @GetMapping("/vertical")
+    public String vertial() {
+        return "bar-chart-vertical";
+    }
 }

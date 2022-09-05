@@ -1,0 +1,136 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "height": 400,
+    "width": 500,
+    "padding": 10,
+    "autosize": "pad",
+    "data": [
+        {
+            "name": "my-data",
+            "url": "/json/data.json"
+        }
+    ],
+    "scales": [
+        {
+            "name": "yscale",
+            "type": "band",
+            "paddingInner": 0.3,
+            "paddingOuter": 0.2,
+            "range": "height",
+            "domain": {
+                "data": "my-data",
+                "field": "category"
+            },
+            "round": true
+        },
+        {
+            "name": "xscale",
+            "type": "linear",
+            "domain": {
+                "data": "my-data",
+                "field": "amount"
+            },
+            "range": "width",
+            "nice": true
+        }
+    ],
+    "axes": [
+        {
+            "scale": "yscale",
+            "orient": "left",
+            "title": "Category"
+        }
+    ],
+    "marks": [
+        {
+            "type": "rect",
+            "from": {
+                "data": "my-data"
+            },
+            "encode": {
+                "enter": {
+                    "y": {
+                        "scale": "yscale",
+                        "field": "category"
+                    },
+                    "height": {
+                        "scale": "yscale",
+                        "band": 1
+                    },
+                    "x": {
+                        "scale": "xscale",
+                        "field": "amount"
+                    },
+                    "x2": {
+                        "scale": "xscale",
+                        "value": 0
+                    },
+                    "stroke": {
+                        "value": "black"
+                    }
+                },
+                "update": {
+                    "fill": {
+                        "value": "green"
+                    }
+                },
+                "hover": {
+                    "fill": {
+                        "value": "steelblue"
+                    }
+                }
+            }
+        },
+        {
+            "type": "text",
+            "from": {
+                "data": "my-data"
+            },
+            "encode": {
+                "enter": {
+                    "align": {
+                        "value": "center"
+                    },
+                    "baseline": {
+                        "value": "bottom"
+                    },
+                    "fill": {
+                        "value": "#333"
+                    }
+                },
+                "update": {
+                    "angle": {
+                        "value": 90
+                    },
+                    "y": {
+                        "scale": "yscale",
+                        "field": "category",
+                        "band": 0.5
+                    },
+                    "x": {
+                        "scale": "xscale",
+                        "field": "amount",
+                        "offset": 2
+                    },
+                    "text": {
+                        "field": "amount"
+                    },
+                    "fontWeight": {
+                        "value": "normal"
+                    },
+                    "fontSize": {
+                        "value": 12
+                    }
+                },
+                "hover": {
+                    "fontWeight": {
+                        "value": "bold"
+                    },
+                    "fontSize": {
+                        "value": 24
+                    }
+                }
+            }
+        }
+    ]
+}
