@@ -132,5 +132,37 @@
                 }
             }
         }
-    ]
+    ],
+    "title": {
+        "text": "Bar chart",
+        "subtitle": "A vertical type",
+        "encode": {
+            "title": {
+                "interactive": true,
+                "update": {
+                    "fill": {
+                        "value": "purple"
+                    }
+                },
+                "hover": {
+                    "fill": {
+                        "value": "green"
+                    }
+                }
+            },
+            "subtitle": {
+                "interactive": true,
+                "update": {
+                    "fontStyle": {
+                        "value": "italic"
+                    }
+                },
+                "hover": {
+                    "fontStyle": {
+                        "value": "normal"
+                    }
+                }
+            }
+        }
+    }
 }
